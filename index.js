@@ -1,5 +1,5 @@
 // ⭐️ Example Challenge START ⭐️
-TESTDig
+
 /**Example Task : processFirstItem()
  * This example shows how you might go about solving the rest of the tasks
  * 
@@ -28,11 +28,14 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  - counter1 uses a closure where count++ references let count; it seems counter 2 is trying to reference a variable which does not exist within the brackets
   
   2. Which of the two uses a closure? How can you tell?
+  - counter 1; see answer above
   
-  3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+  3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?  
+- Counter 1 will keep a summation, whereas Counter 2 should return the count + 1 regardless if it was ran before
+
 */
 
 // counter1 code
@@ -62,8 +65,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.round(Math.random() * 2);
 }
 
 
@@ -81,7 +84,7 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inningCb,numberinnings){
   /*Code Here*/
 }
 
