@@ -66,9 +66,8 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(){
-    return Math.round(Math.random() * 2);
+    return Math.floor(Math.random() * 3);
 }
-
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -83,19 +82,46 @@ Use the finalScore function below to do the following:
   "Away": 5
 }
 */ 
-
 function finalScore(inningCb,numberinnings){
-  /*Code Here*/
+  let homeScore = 0;
+  let awayScore = 0;
+
+  for (let i = 0; i < numberinnings; i++){
+    homeScore = homeScore + inningCb();
+    awayScore = awayScore + inningCb();
+  }
+  return {
+    Home: homeScore,
+    Away: awayScore
+  }  
 }
+console.log('Task3', finalScore(inning,9));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inningCb,numberinnings) {
+  const totalScore = [];
+
+  let homeScore = 0;
+  let awayScore = 0;
+
+  for (let i = 0; i < numberinnings; i++){
+    homeScore = homeScore + inningCb();
+    awayScore = awayScore + inningCb();
+
+    totalScore.push;
+  }
+
+  return {
+    Home: homeScore.numberinnings,
+    Away: awayScore.numberinnings
+  }  
 }
+
+console.log(getInningScore(inning(4)));
 
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
@@ -139,9 +165,23 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function scoreboard(inningcb, getInningScoreCb, inningstobeplayed) {
+  const scoreTracker = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < inningstobeplayed; i++){
+    const currentInning = getInningScorecb(inningCb);
+    homeScore = homeScore + currentInning.Home;
+    awayScore = awayScore + currentInning.Away;
+    scoreTracker.push(`Inning ${i-1}: Away ${currentInning.Away} - Home ${currentInning.Home}`);
+  }
+  if (homeScore === awayScore){
+    scoreTracker.push(`This game will require extra innings: Away ${awayScore} - Home ${homeScore}`);
+
+  }
+  return scoreTracker;
+  }
+
 
 
 

@@ -59,6 +59,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+- Closure happens when the function reaches back into its outer scope  to grab something defined in the outer scope
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,9 +81,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+- closure is used to grab the name as it's outside the functions scope. I think.. although name is a parameter
 
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+- Dans name is always the same, but newRoll is different as it is random between 1-6
+
+c. What is the lexical scope of `newRoll`? 
+- the lexical scope is 
 
 ### Task 3 - Stretch Goals
 
